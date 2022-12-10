@@ -8,6 +8,7 @@
 <li>Get uploaded images</li>
 <li>Follow user</li>
 <li>Get Followers</li>
+<li>Get Followings</li>
 
 <h4>Authentication With JWT<h4>
 
