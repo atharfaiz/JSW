@@ -1,9 +1,7 @@
 package com.jsw.app.controller;
 
-import com.jsw.app.dto.UserDTO;
 import com.jsw.app.exceptions.CustomException;
 import com.jsw.app.service.FileService;
-import com.jsw.app.service.JSWUserService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
