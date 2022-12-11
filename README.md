@@ -67,6 +67,12 @@ http://localhost:9192/api/follow?username=faiz1
 <li>Second level connections || suggestions - API (GET) ENDPOINT - http://localhost:9192/api/suggestions</li>
 
 <h4>Authentication With JWT<h4> Token patternt - Bearer {token}
+<br>
+Example 
+<br>
 
+```aidl
+Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJmYWl6IiwiZXhwIjoxNjcwODAzMDU1LCJpYXQiOjE2NzA3NjcwNTV9.mCsIbFMnwCcg7ByiDvSWIVwxch-aEZ83_Uf7AOorj8c
+```
 
 <a href="http://localhost:9192/swagger-ui.html">Swagger URL</a>
