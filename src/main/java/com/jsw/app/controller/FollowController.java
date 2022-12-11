@@ -1,5 +1,6 @@
 package com.jsw.app.controller;
 
+import com.jsw.app.dto.ResponseDTO;
 import com.jsw.app.dto.UserDTO;
 import com.jsw.app.exceptions.CustomException;
 import com.jsw.app.service.JSWUserService;
@@ -10,6 +11,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
 import java.util.List;
 
 @RestController
@@ -23,10 +26,11 @@ public class FollowController {
 
     @PutMapping("/follow")
     @ApiOperation("Follow user")
-    public ResponseEntity<List<UserDTO>> follow(@RequestParam String username) {
-        ResponseEntity<List<UserDTO>> response = null;
+    public ResponseEntity<ResponseDTO<List<UserDTO>>> follow(@RequestParam String username) {
+        ResponseEntity<ResponseDTO<List<UserDTO>>> response = null;
         try {
-            response = new ResponseEntity<>(userService.follow(username), HttpStatus.OK);
+            response = new ResponseEntity<>(new ResponseDTO<>(Arrays.asList("You have successfully followed" + username),
+                    null, userService.follow(username)), HttpStatus.OK);
         } catch (Exception e) {
             throw new CustomException(e.getMessage(), e);
         }

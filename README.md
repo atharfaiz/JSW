@@ -9,11 +9,11 @@
 Request body
 <br>
 
-```
+```json
 
 {
 "email": "faiz@athar.com",
-"password": "faiz123",
+"password": "faiz",
 "username": "faiz"
 }
 
@@ -21,9 +21,15 @@ Request body
 Response
 ```json
 {
-  "username": "faiz",
-  "password": null,
-  "email": "faiz@athar.com"
+  "successMessages": [
+    "User created successfully"
+  ],
+  "errorMessages": [],
+  "o": {
+    "username": "faiz",
+    "password": null,
+    "email": "faiz@athar.com"
+  }
 }
 ```
 
@@ -41,8 +47,14 @@ Request body
 
 Response
 
-```text
-eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJmYWl6IiwiZXhwIjoxNjcwODAzMDU1LCJpYXQiOjE2NzA3NjcwNTV9.mCsIbFMnwCcg7ByiDvSWIVwxch-aEZ83_Uf7AOorj8c
+```json
+{
+  "successMessages": [
+    "User authenticated successfully"
+  ],
+  "errorMessages": null,
+  "o": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJmYWl6IiwiZXhwIjoxNjcwODA1MDM4LCJpYXQiOjE2NzA3NjkwMzh9.zzti70g60u4vB9iLjW_ScDIOu6LyZKrd7M2UXdk3a6o"
+}
 ```
 
 <h5>CREATE POST CONTROLLER</h5>
@@ -61,6 +73,27 @@ Request Param
 http://localhost:9192/api/follow?username=faiz1
 ```
 
+```json
+{
+  "successMessages": [
+    "You have successfully followed faiz1"
+  ],
+  "errorMessages": null,
+  "o": [
+    {
+      "username": "faiz1",
+      "password": null,
+      "email": "sb1@sb.com"
+    },
+    {
+      "username": "faiz2",
+      "password": null,
+      "email": "sb2@sb.com"
+    }
+  ]
+}
+```
+
 
 <li>Get Followers  - API (GET) ENDPOINT - http://localhost:9192/api/followers</li>
 <li>Get Followings - API (GET) ENDPOINT - http://localhost:9192/api/followings</li>
@@ -76,3 +109,4 @@ Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJmYWl6IiwiZXhwIjoxNjcwODAzMDU1LCJpYXQiOjE2
 ```
 
 <a href="http://localhost:9192/swagger-ui.html">Swagger URL</a>
+
