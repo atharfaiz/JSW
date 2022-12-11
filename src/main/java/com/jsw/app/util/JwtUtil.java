@@ -1,5 +1,6 @@
 package com.jsw.app.util;
 
+import com.jsw.app.constant.JSWConstant;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
@@ -14,8 +15,6 @@ import java.util.function.Function;
 @Service
 public class JwtUtil {
 
-    private String secret = "javatechie";
-
     public String extractUsername(String token) {
         return extractClaim(token, Claims::getSubject);
     }
@@ -29,7 +28,7 @@ public class JwtUtil {
         return claimsResolver.apply(claims);
     }
     private Claims extractAllClaims(String token) {
-        return Jwts.parser().setSigningKey(secret).parseClaimsJws(token).getBody();
+        return Jwts.parser().setSigningKey(JSWConstant.SECRET).parseClaimsJws(token).getBody();
     }
 
     private Boolean isTokenExpired(String token) {
@@ -45,7 +44,7 @@ public class JwtUtil {
 
         return Jwts.builder().setClaims(claims).setSubject(subject).setIssuedAt(new Date(System.currentTimeMillis()))
                 .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 60 * 10))
-                .signWith(SignatureAlgorithm.HS256, secret).compact();
+                .signWith(SignatureAlgorithm.HS256, JSWConstant.SECRET).compact();
     }
 
     public Boolean validateToken(String token, UserDetails userDetails) {

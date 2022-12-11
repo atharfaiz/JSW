@@ -6,4 +6,6 @@ public class JSWConstant {
     public static final String AUTHORIZATION_HEADER = "Authorization";
 
     public static final String TOKEN_NAME = "JWT";
+
+    public static final String SECRET = "jswsocialapp";
 }
