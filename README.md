@@ -5,7 +5,45 @@
 <h5>USER -CONTROLLER</h5>
 
 <li>Create User  - API (POST) ENDPOINT - http://localhost:9192/api/user/signup</li>
+<br>
+Request body
+<br>
+
+```
+
+{
+"email": "faiz@athar.com",
+"password": "faiz123",
+"username": "faiz"
+}
+
+```
+Response
+```aidl
+{
+  "username": "faiz",
+  "password": null,
+  "email": "faiz@athar.com"
+}
+```
+
 <li>Login - API (POST) ENDPOINT - http://localhost:9192/api/user/signin </li>
+<br>
+Request body
+<br>
+
+```aidl
+{
+  "password": "faiz123",
+  "userName": "faiz"
+}
+```
+
+Response
+
+```aidl
+eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJmYWl6IiwiZXhwIjoxNjcwODAzMDU1LCJpYXQiOjE2NzA3NjcwNTV9.mCsIbFMnwCcg7ByiDvSWIVwxch-aEZ83_Uf7AOorj8c
+```
 
 <h5>CREATE POST CONTROLLER</h5>
 
