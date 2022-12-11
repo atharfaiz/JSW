@@ -19,7 +19,7 @@ Request body
 
 ```
 Response
-```aidl
+```json
 {
   "username": "faiz",
   "password": null,
@@ -32,7 +32,7 @@ Response
 Request body
 <br>
 
-```aidl
+```json
 {
   "password": "faiz123",
   "userName": "faiz"
@@ -41,7 +41,7 @@ Request body
 
 Response
 
-```aidl
+```text
 eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJmYWl6IiwiZXhwIjoxNjcwODAzMDU1LCJpYXQiOjE2NzA3NjcwNTV9.mCsIbFMnwCcg7ByiDvSWIVwxch-aEZ83_Uf7AOorj8c
 ```
 
@@ -57,7 +57,7 @@ eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJmYWl6IiwiZXhwIjoxNjcwODAzMDU1LCJpYXQiOjE2NzA3Njc
 Request Param
 <br>
 
-```aidl
+```url
 http://localhost:9192/api/follow?username=faiz1
 ```
 
@@ -71,7 +71,7 @@ http://localhost:9192/api/follow?username=faiz1
 Example 
 <br>
 
-```aidl
+```text
 Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJmYWl6IiwiZXhwIjoxNjcwODAzMDU1LCJpYXQiOjE2NzA3NjcwNTV9.mCsIbFMnwCcg7ByiDvSWIVwxch-aEZ83_Uf7AOorj8c
 ```
 
