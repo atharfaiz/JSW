@@ -14,6 +14,8 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -28,13 +30,13 @@ public class FileService {
         if (!tempDirectory.exists()) {
             tempDirectory.mkdir();
         }
-        Path path = Paths.get(filepath + file.getOriginalFilename());
-        Files.write(path, file.getBytes());
+        Path resolvePath = Paths.get(filepath).toAbsolutePath().normalize().resolve(file.getOriginalFilename());
+        Files.copy(file.getInputStream(), resolvePath, StandardCopyOption.REPLACE_EXISTING);
     }
 
     public List<String> getUploadedImages() {
         String username = JSWUserService.getLoggedInUserUserName();
-        List<String> paths;
+        List<String> paths = new ArrayList<>();
         String filepath = System.getProperty(JSWConstant.JAVA_TEMP_DIR, "") + File.separator + username;
         File tempDirectory = new File(filepath);
         if (tempDirectory.exists() && tempDirectory.isDirectory()) {
@@ -45,8 +47,6 @@ public class FileService {
                 return null;
             }).collect(Collectors.toList());
 
-        } else {
-            throw new CustomException("No image found", null);
         }
         return paths;
     }

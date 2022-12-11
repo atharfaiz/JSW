@@ -30,7 +30,7 @@ public class CreatePostController {
         ResponseEntity<String> response = null;
         try {
             fileService.uploadFile(file);
-            response = new ResponseEntity<>("File uploade successfully", HttpStatus.OK);
+            response = new ResponseEntity<>("File uploaded successfully", HttpStatus.OK);
         } catch (Exception e) {
             throw new CustomException(e.getMessage(), e);
         }
