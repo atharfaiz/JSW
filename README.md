@@ -53,6 +53,15 @@ eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJmYWl6IiwiZXhwIjoxNjcwODAzMDU1LCJpYXQiOjE2NzA3Njc
 <h5>FOLLOW CONTROLLER</h5>
 
 <li>Follow user  - API (PUT) ENDPOINT - http://localhost:9192/api/follow</li>
+<br>
+Request Param
+<br>
+
+```aidl
+http://localhost:9192/api/follow?username=faiz1
+```
+
+
 <li>Get Followers  - API (GET) ENDPOINT - http://localhost:9192/api/followers</li>
 <li>Get Followings - API (GET) ENDPOINT - http://localhost:9192/api/followings</li>
 <li>Second level connections || suggestions - API (GET) ENDPOINT - http://localhost:9192/api/suggestions</li>
