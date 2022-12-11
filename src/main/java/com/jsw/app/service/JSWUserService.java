@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 @Service
 public class JSWUserService implements UserDetailsService {
@@ -61,6 +62,21 @@ public class JSWUserService implements UserDetailsService {
         User currentUser = repository.findByUserName(loggedInUser);
         List<User> followers = currentUser.getAccount().getFollowings();
         return followers.stream().map(f -> new UserDTO(f.getUserName(), null, f.getEmail())).collect(Collectors.toList());
+    }
+
+    public List<UserDTO> showSecondLevelConnects() {
+        List<UserDTO> secondLevelconnections = new ArrayList<>();
+        User user = repository.findByUserName(getLoggedInUserUserName());
+        List<User> connections = Stream.concat(user.getAccount().getFollowings().stream(), user.getAccount().getFollowors().stream()).collect(Collectors.toList());
+        if (!connections.isEmpty()) {
+            connections.forEach(user1 -> {
+                List<User> userArray = Stream.concat(user1.getAccount().getFollowings().stream(), user1.getAccount().getFollowors().stream()).collect(Collectors.toList());
+                if (!userArray.isEmpty()) {
+                    secondLevelconnections.addAll(userArray.stream().map(f -> new UserDTO(f.getUserName(), null, f.getEmail())).collect(Collectors.toList()));
+                }
+            });
+        }
+        return secondLevelconnections;
     }
 
     public static String getLoggedInUserUserName() {

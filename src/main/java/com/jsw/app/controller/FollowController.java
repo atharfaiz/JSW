@@ -56,4 +56,16 @@ public class FollowController {
         }
         return response;
     }
+
+    @GetMapping("/suggestions")
+    @ApiOperation("People you may know")
+    public ResponseEntity<List<UserDTO>> peopleYouMayKnow() {
+        ResponseEntity<List<UserDTO>> response;
+        try {
+            response = new ResponseEntity<>(userService.showSecondLevelConnects(), HttpStatus.OK);
+        } catch (Exception e) {
+            throw new CustomException(e.getMessage(), e);
+        }
+        return response;
+    }
 }

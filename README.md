@@ -9,8 +9,9 @@
 <li>Follow user</li>
 <li>Get Followers</li>
 <li>Get Followings</li>
+<li>Second level connections || suggestions</li>
 
-<h4>Authentication With JWT<h4>
+<h4>Authentication With JWT<h4> Token patternt - Bearer {token}
 
 
 <a href="http://localhost:9192/swagger-ui.html">Swagger URL</a>
