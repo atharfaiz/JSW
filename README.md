@@ -16,8 +16,8 @@
 
 <li>Follow user  - API (PUT) ENDPOINT - http://localhost:9192/api/follow</li>
 <li>Get Followers  - API (GET) ENDPOINT - http://localhost:9192/api/followers</li>
-<li>Get Followings - API (POST) ENDPOINT - http://localhost:9192/api/followings</li>
-<li>Second level connections || suggestions - API (POST) ENDPOINT - http://localhost:9192/api/suggestions</li>
+<li>Get Followings - API (GET) ENDPOINT - http://localhost:9192/api/followings</li>
+<li>Second level connections || suggestions - API (GET) ENDPOINT - http://localhost:9192/api/suggestions</li>
 
 <h4>Authentication With JWT<h4> Token patternt - Bearer {token}
 
