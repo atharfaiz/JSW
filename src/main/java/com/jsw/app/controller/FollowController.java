@@ -57,6 +57,7 @@ public class FollowController {
             response = new ResponseEntity<>(userService.getFollowings(), HttpStatus.OK);
         } catch (Exception e) {
             throw new CustomException(e.getMessage(), e);
+            //change error handling
         }
         return response;
     }
