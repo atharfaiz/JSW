@@ -21,6 +21,8 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
+    //TODO going forward we are going to use keyclock auth server
+
     @Autowired
     private JSWUserService userDetailsService;
 
