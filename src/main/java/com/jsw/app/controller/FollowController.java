@@ -58,6 +58,8 @@ public class FollowController {
         } catch (Exception e) {
             throw new CustomException(e.getMessage(), e);
             //change error handling
+
+            // new changes has been promoted into some other branch
         }
         return response;
     }
