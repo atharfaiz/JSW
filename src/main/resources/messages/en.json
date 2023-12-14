@@ -1,3 +1,6 @@
 {
-    "Check your inbox": ""
+  "definition": {
+    "greeting": "Hello developer, Welcome to the world of translation",
+    "product": "Translation book"
+  }
 }
