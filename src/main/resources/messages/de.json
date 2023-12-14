@@ -1,5 +1,6 @@
 {
   "definition": {
+    "error": "Fehler bei der Anmeldung.",
     "greeting": "Hallo Entwickler, Willkommen in der Welt der Übersetzung",
     "product": "Übersetzungsbuch"
   }
