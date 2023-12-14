@@ -1,3 +1,6 @@
 {
-    "Check your inbox": "Überprüfe deinen Posteingang"
+  "definition": {
+    "greeting": "Hallo Entwickler, Willkommen in der Welt der Übersetzung",
+    "product": "Übersetzungsbuch"
+  }
 }
