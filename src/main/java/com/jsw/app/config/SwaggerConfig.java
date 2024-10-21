@@ -20,6 +20,10 @@ import java.util.List;
 public class SwaggerConfig {
 
 
+    /**
+     * APIINFO
+     * @return
+     */
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder().title("JSW Social APP").description("Spring Boot app").version("1.0.0")
                 .contact(new Contact("MD FAIZ ATHAR", null, "mdfaizathar@gmail.com"))
